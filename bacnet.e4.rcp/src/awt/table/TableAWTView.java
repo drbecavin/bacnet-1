@@ -147,24 +147,24 @@ public class TableAWTView implements SelectionListener{
 
 		btnFileExport = new Button(composite_5, SWT.NONE);
 		btnFileExport.setToolTipText("Save table in txt file");
-		btnFileExport.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/fileIO/txt.bmp"));
+		btnFileExport.setImage(ResourceManager.getPluginImage("bacnet", "icons/fileIO/txt.bmp"));
 		btnFileExport.setBounds(0, 0, 75, 25);
 		btnFileExport.addSelectionListener(this);
 
 		btnExportToImage = new Button(composite_5, SWT.NONE);
 		btnExportToImage.setToolTipText("Save table in PNG image");
-		btnExportToImage.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/fileIO/png.bmp"));
+		btnExportToImage.setImage(ResourceManager.getPluginImage("bacnet", "icons/fileIO/png.bmp"));
 		btnExportToImage.setSize(95, 25);
 		btnExportToImage.addSelectionListener(this);
 
 		btnExportSVG = new Button(composite_5, SWT.NONE);
 		btnExportSVG.setToolTipText("Save table in SVG vector image (Illustrator)");
-		btnExportSVG.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/fileIO/svg.bmp"));
+		btnExportSVG.setImage(ResourceManager.getPluginImage("bacnet", "icons/fileIO/svg.bmp"));
 		btnExportSVG.addSelectionListener(this);
 
 		btnSigSave = new Button(composite_5, SWT.NONE);
 		btnSigSave.setToolTipText("Save the list of genes in the first column as a Signature file");
-		btnSigSave.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/fileIO/sigSave.bmp"));
+		btnSigSave.setImage(ResourceManager.getPluginImage("bacnet", "icons/fileIO/sigSave.bmp"));
 		btnSigSave.addSelectionListener(this);
 
 		btnDisplayValues = new Button(composite_5, SWT.CHECK);
@@ -177,21 +177,21 @@ public class TableAWTView implements SelectionListener{
 
 		btnCog = new Button(composite_5, SWT.NONE);
 		btnCog.setToolTipText("Display COGs expression matrix");
-		btnCog.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/COG.bmp"));
+		btnCog.setImage(ResourceManager.getPluginImage("bacnet", "icons/COG.bmp"));
 		btnCog.addSelectionListener(this);
 
 		btnVolcanoPlot = new Button(composite_5, SWT.NONE);
 		btnVolcanoPlot.setToolTipText("VolcanoPlot");
-		btnVolcanoPlot.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/volcanoplot.bmp"));
+		btnVolcanoPlot.setImage(ResourceManager.getPluginImage("bacnet", "icons/volcanoplot.bmp"));
 		btnVolcanoPlot.addSelectionListener(this);
 		btnColorProperties = new Button(composite_5, SWT.NONE);
 		btnColorProperties.setToolTipText("Set color mapper");
-		btnColorProperties.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/colorMapper.bmp"));
+		btnColorProperties.setImage(ResourceManager.getPluginImage("bacnet", "icons/colorMapper.bmp"));
 		btnColorProperties.addSelectionListener(this);
 
 		btnCytoscapeExport = new Button(composite_5, SWT.NONE);
 		btnCytoscapeExport.setToolTipText("Save the information into a cytoscape file, to represent them into a network");
-		btnCytoscapeExport.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/fileIO/cytoscape.bmp"));
+		btnCytoscapeExport.setImage(ResourceManager.getPluginImage("bacnet", "icons/fileIO/cytoscape.bmp"));
 		btnCytoscapeExport.addSelectionListener(this);
 
 		//	     TableColumn col = table.getColumnModel().getColumn(table.getColumnCount()-1);
@@ -210,22 +210,22 @@ public class TableAWTView implements SelectionListener{
 
 		btnBoxPlot = new Button(composite_5, SWT.NONE);
 		btnBoxPlot.setToolTipText("Display boxplot");
-		btnBoxPlot.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/boxplotView.bmp"));
+		btnBoxPlot.setImage(ResourceManager.getPluginImage("bacnet", "icons/boxplotView.bmp"));
 		btnBoxPlot.addSelectionListener(this);
 		btnHistogram = new Button(composite_5, SWT.NONE);
 		btnHistogram.setToolTipText("Display histogram");
-		btnHistogram.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/histoView.bmp"));
+		btnHistogram.setImage(ResourceManager.getPluginImage("bacnet", "icons/histoView.bmp"));
 		btnHistogram.addSelectionListener(this);
 		btnScatterPlot = new Button(composite_5, SWT.NONE);
 		btnScatterPlot.setToolTipText("2D representation (SVDMDS)");
-		btnScatterPlot.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/scatter.bmp"));
+		btnScatterPlot.setImage(ResourceManager.getPluginImage("bacnet", "icons/scatter.bmp"));
 		btnScatterPlot.addSelectionListener(this);
 
 		btnHtmlexport = new Button(composite_5, SWT.NONE);
-		btnHtmlexport.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/fileIO/htmlSave.bmp"));
+		btnHtmlexport.setImage(ResourceManager.getPluginImage("bacnet", "icons/fileIO/htmlSave.bmp"));
 		btnHtmlexport.addSelectionListener(this);
 		btnDisplaygenome = new Button(composite_5, SWT.NONE);
-		btnDisplaygenome.setImage(ResourceManager.getPluginImage("bacnet.rcp", "icons/genome/genomeViewer.bmp"));
+		btnDisplaygenome.setImage(ResourceManager.getPluginImage("bacnet", "icons/genome/genomeViewer.bmp"));
 		btnDisplaygenome.addSelectionListener(this);
 		Composite composite_2 = new Composite(container, SWT.NONE);
 		GridData gd_composite_2 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 2, 1);
@@ -570,7 +570,7 @@ public class TableAWTView implements SelectionListener{
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 			fd.setText("Save the table to: ");
 			//fd.setFilterPath(Activator.getDefault().getPreferenceStore().getString(HEATMAP_View_Pref));
-			fd.setFileName(Database.getInstance().getPATH()+FileUtils.removeExtension(matrix.getName())+".txt");
+			fd.setFileName(Database.getInstance().getPath()+FileUtils.removeExtension(matrix.getName())+".txt");
 			String[] filterExt = {"*.txt","*.*" };
 			fd.setFilterExtensions(filterExt);
 			String fileName = fd.open();
@@ -583,7 +583,7 @@ public class TableAWTView implements SelectionListener{
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 			fd.setText("Save the image to: ");
 			//fd.setFilterPath(Activator.getDefault().getPreferenceStore().getString(Project.getANALYSIS_PATH()));
-			fd.setFileName(Database.getInstance().getPATH()+FileUtils.removeExtension(matrix.getName())+".png");
+			fd.setFileName(Database.getInstance().getPath()+FileUtils.removeExtension(matrix.getName())+".png");
 			String[] filterExt = {"*.png","*.*" };
 			fd.setFilterExtensions(filterExt);
 			String fileName = fd.open();
@@ -599,7 +599,7 @@ public class TableAWTView implements SelectionListener{
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 			fd.setText("Save the image to: ");
 			//fd.setFilterPath(Activator.getDefault().getPreferenceStore().getString(Project.getANALYSIS_PATH()));
-			fd.setFileName(Database.getInstance().getPATH()+FileUtils.removeExtension(matrix.getName())+".png");
+			fd.setFileName(Database.getInstance().getPath()+FileUtils.removeExtension(matrix.getName())+".png");
 			String[] filterExt = {"*.png","*.*" };
 			fd.setFilterExtensions(filterExt);
 			String fileName = fd.open();
@@ -610,7 +610,7 @@ public class TableAWTView implements SelectionListener{
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 			fd.setText("Save the SVG image to: ");
 			//fd.setFilterPath(Activator.getDefault().getPreferenceStore().getString(Project.getANALYSIS_PATH()+getPartName()+".svg"));
-			fd.setFileName(Database.getInstance().getPATH()+FileUtils.removeExtension(matrix.getName())+".svg");
+			fd.setFileName(Database.getInstance().getPath()+FileUtils.removeExtension(matrix.getName())+".svg");
 			String[] filterExt = {"*.svg","*.*" };
 			fd.setFilterExtensions(filterExt);
 			String fileName = fd.open();
@@ -623,7 +623,7 @@ public class TableAWTView implements SelectionListener{
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 			fd.setText("Save the list of genes to: ");
 			//fd.setFilterPath(Activator.getDefault().getPreferenceStore().getString(Project.getANALYSIS_PATH()+getPartName()+".svg"));
-			fd.setFileName(Database.getInstance().getPATH()+FileUtils.removeExtension(matrix.getName())+".txt");
+			fd.setFileName(Database.getInstance().getPath()+FileUtils.removeExtension(matrix.getName())+".txt");
 			String[] filterExt = {"*.txt","*.*" };
 			fd.setFilterExtensions(filterExt);
 			String fileName = fd.open();

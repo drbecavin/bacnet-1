@@ -1,10 +1,5 @@
 package bacnet.e4.rcp;
 
-import java.io.File;
-import java.lang.management.ManagementFactory;
-import java.lang.management.RuntimeMXBean;
-import java.util.List;
-
 import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.ui.workbench.lifecycle.PostContextCreate;
 import org.eclipse.e4.ui.workbench.lifecycle.PreSave;
@@ -14,7 +9,6 @@ import org.eclipse.equinox.app.IApplicationContext;
 import org.eclipse.swt.widgets.Display;
 
 import bacnet.Database;
-import bacnet.Database.TypeProject;
 
 /**
  * This is a stub implementation containing e4 LifeCycle annotated methods.<br />
@@ -28,16 +22,16 @@ public class E4LifeCycle {
 	@PostContextCreate
 	void postContextCreate(IApplicationContext appContext, Display display) {
 		
-		Database.getInstance().setTypeProject(TypeProject.Listeriomics);
+		Database.getInstance().setProjectName(Database.LISTERIOMICS_PROJECT);
 		
-		System.out.println("Run "+Database.getProjectName());
+		System.out.println("Run "+Database.getInstance().getProjectName());
 		
 		//boolean open = openDialog(shell);
 		boolean open = true;
 		if (open){
 			System.out.println("Open perspective");
-			Database.getInstance().setPATH();			
-			Database.getInstance().initDatabase(display.getActiveShell());
+			//Database.getInstance().setPath("");			
+			//Database.getInstance().initDatabase(display.getActiveShell());
 			
 			// close the static splash screen
 			appContext.applicationRunning();

@@ -37,7 +37,6 @@ public class LoadExpressionMatrixHandler {
                     ExpressionMatrix matrix = ExpressionMatrix.loadTab(path + fileName, true);
                     System.out.println("Loaded:" + path + fileName);
                     TableSWTView.displayMatrix(matrix, Genome.loadEgdeGenome(), fileName, partService);
-
                 }
             }
         }

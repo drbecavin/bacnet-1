@@ -1,14 +1,11 @@
 package bacnet.raprcp;
 
 import java.util.HashMap;
-import org.eclipse.e4.ui.model.application.ui.basic.MPart;
+
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.e4.ui.workbench.modeling.EPartService.PartState;
-import org.eclipse.rap.rwt.RWT;
-import org.eclipse.rap.rwt.client.service.BrowserNavigation;
-import org.eclipse.rap.rwt.client.service.BrowserNavigationEvent;
-import org.eclipse.rap.rwt.client.service.BrowserNavigationListener;
-import org.eclipse.rap.rwt.client.service.UrlLauncher;
+import org.eclipse.swt.program.Program;
+
 import bacnet.Database;
 import bacnet.expressionAtlas.HeatMapMultiOmicsView;
 import bacnet.expressionAtlas.HeatMapProteomicsView;
@@ -56,12 +53,12 @@ public class NavigationManagement {
         /*
          * For eclipse.rap
          */
-        UrlLauncher launcher = RWT.getClient().getService(UrlLauncher.class);
-        launcher.openURL(url);
+//        UrlLauncher launcher = RWT.getClient().getService(UrlLauncher.class);
+//        launcher.openURL(url);
         /*
          * For eclipse.rcp
          */
-        // Program.launch(url);
+        Program.launch(url);
     }
 
     /**
@@ -73,33 +70,33 @@ public class NavigationManagement {
         /*
          * For eclipse.rap
          */
-        BrowserNavigation service = RWT.getClient().getService(BrowserNavigation.class);
-        service.removeBrowserNavigationListener(Database.getInstance().getNavigationListener());
-        service.addBrowserNavigationListener(new BrowserNavigationListener() {
-            /**
-             * 
-             */
-            private static final long serialVersionUID = -5934778327076792918L;
-
-            @Override
-            public void navigated(BrowserNavigationEvent event) {
-                // String sourceID = event.getSource().getClass().toString();
-                String stateID = event.getState();
-                // System.out.println("source: "+sourceID+" state: "+stateID);
-                /*
-                 * Parse State
-                 */
-                String viewID = stateID;
-                if (stateID.contains("?")) {
-                    viewID = stateID.substring(0, stateID.indexOf('?'));
-                }
-                Database.getInstance().setCurrentState(stateID);
-                MPart part = partService.findPart(viewID);
-                if (part != null) {
-                    partService.showPart(part, PartState.ACTIVATE);
-                }
-            }
-        });
+//        BrowserNavigation service = RWT.getClient().getService(BrowserNavigation.class);
+//        service.removeBrowserNavigationListener(Database.getInstance().getNavigationListener());
+//        service.addBrowserNavigationListener(new BrowserNavigationListener() {
+//            /**
+//             * 
+//             */
+//            private static final long serialVersionUID = -5934778327076792918L;
+//
+//            @Override
+//            public void navigated(BrowserNavigationEvent event) {
+//                // String sourceID = event.getSource().getClass().toString();
+//                String stateID = event.getState();
+//                // System.out.println("source: "+sourceID+" state: "+stateID);
+//                /*
+//                 * Parse State
+//                 */
+//                String viewID = stateID;
+//                if (stateID.contains("?")) {
+//                    viewID = stateID.substring(0, stateID.indexOf('?'));
+//                }
+//                Database.getInstance().setCurrentState(stateID);
+//                MPart part = partService.findPart(viewID);
+//                if (part != null) {
+//                    partService.showPart(part, PartState.ACTIVATE);
+//                }
+//            }
+//        });
 
         /*
          * for eclipse.rcp
@@ -114,12 +111,12 @@ public class NavigationManagement {
         /*
          * for eclise.rap
          */
-        return RWT.getRequest().getRequestURL().toString();
+        //return RWT.getRequest().getRequestURL().toString();
 
         /*
          * for eclipse.rcp
          */
-        // return "";
+        return "";
     }
 
     /**
@@ -133,14 +130,14 @@ public class NavigationManagement {
         /*
          * for eclipse.rap
          */
-        String stateName = viewID;
-        if (parameters.size() > 0)
-            stateName += '?';
-        for (String key : parameters.keySet()) {
-            stateName += key + "=" + parameters.get(key) + ";";
-        }
-        BrowserNavigation service = RWT.getClient().getService(BrowserNavigation.class);
-        service.pushState(stateName, Database.getInstance().getProjectName());
+//        String stateName = viewID;
+//        if (parameters.size() > 0)
+//            stateName += '?';
+//        for (String key : parameters.keySet()) {
+//            stateName += key + "=" + parameters.get(key) + ";";
+//        }
+//        BrowserNavigation service = RWT.getClient().getService(BrowserNavigation.class);
+//        service.pushState(stateName, Database.getInstance().getProjectName());
 
         /*
          * for eclipse.rcp

@@ -10,12 +10,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.TreeMap;
+
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.jface.dialogs.ProgressMonitorDialog;
 import org.eclipse.jface.operation.IRunnableWithProgress;
-import org.eclipse.rap.rwt.SingletonUtil;
-import org.eclipse.rap.rwt.client.service.BrowserNavigationListener;
 import org.eclipse.swt.widgets.Shell;
+
 import bacnet.datamodel.annotation.Signature;
 import bacnet.datamodel.dataset.ExpressionMatrix;
 import bacnet.datamodel.dataset.GeneExpression;
@@ -34,12 +34,12 @@ import bacnet.reader.TabDelimitedTableReader;
  * @author UIBC
  *
  */
-public class Database {
+//public class Database {
     /*
      * For eclipse.rcp
      */
-    // public enum Database {
-    // INSTANCE;
+    public enum Database {
+    INSTANCE;
 
     /**
      * If exlipse.rap
@@ -47,15 +47,15 @@ public class Database {
     /**
      * NavigationListener
      */
-    private BrowserNavigationListener navigationListener;
-
-    public BrowserNavigationListener getNavigationListener() {
-        return navigationListener;
-    }
-
-    public void setNavigationListener(BrowserNavigationListener navigationListener) {
-        this.navigationListener = navigationListener;
-    }
+//    private BrowserNavigationListener navigationListener;
+//
+//    public BrowserNavigationListener getNavigationListener() {
+//        return navigationListener;
+//    }
+//
+//    public void setNavigationListener(BrowserNavigationListener navigationListener) {
+//        this.navigationListener = navigationListener;
+//    }
 
     /**
      * Static variable to discriminate BACNET project from the others
@@ -251,8 +251,8 @@ public class Database {
     private Database() {}
 
     public static Database getInstance() {
-        // return Database.INSTANCE;
-        return SingletonUtil.getSessionInstance(Database.class);
+        return Database.INSTANCE;
+        // return SingletonUtil.getSessionInstance(Database.class);
     }
 
     /**

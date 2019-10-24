@@ -270,7 +270,7 @@ public class HideExpressionMatrixDialog extends Dialog implements SelectionListe
 				fd.setText("Open a signature (list of row names)");
 				String[] filterExt = {"*.txt","*.*" };
 				fd.setFilterExtensions(filterExt);
-				fd.setFilterPath(Database.getInstance().getPATH());
+				fd.setFilterPath(Database.getInstance().getPath());
 				String fileName = fd.open();
 				if(fileName!=null){
 					ArrayList<String> signature = TabDelimitedTableReader.readList(fileName);
@@ -300,7 +300,7 @@ public class HideExpressionMatrixDialog extends Dialog implements SelectionListe
 		}else if(e.getSource()==btnSelectGenes){
 			TreeSet<String> includeElements = new TreeSet<>();
 			TreeSet<String> excludeElements = new TreeSet<>();
-			SelectGenomeElementDialog dialog = new SelectGenomeElementDialog(shell,partService,includeElements,excludeElements,Genome.EGDE_NAME);
+			SelectGenomeElementDialog dialog = new SelectGenomeElementDialog(shell,partService,includeElements,excludeElements,Genome.loadEgdeGenome());
 			if(dialog.open()==0){
 				ArrayList<String> signature = new ArrayList<>();
 				for(String row : excludeElements){
@@ -357,7 +357,7 @@ public class HideExpressionMatrixDialog extends Dialog implements SelectionListe
 				fd.setText("Open a signature (list of column names)");
 				String[] filterExt = {"*.txt","*.*" };
 				fd.setFilterExtensions(filterExt);
-				fd.setFilterPath(Database.getInstance().getPATH());
+				fd.setFilterPath(Database.getInstance().getPath());
 				String fileName = fd.open();
 				if(fileName!=null){
 					ArrayList<String> signature = TabDelimitedTableReader.readList(fileName);

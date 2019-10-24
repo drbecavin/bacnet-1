@@ -9,7 +9,6 @@ import org.eclipse.e4.ui.workbench.modeling.EPartService;
 import org.eclipse.swt.widgets.Shell;
 
 import bacnet.Database;
-import bacnet.Leishmania;
 import bacnet.datamodel.annotation.Annotation;
 import bacnet.datamodel.dataset.ExpressionMatrix;
 import bacnet.datamodel.sequence.Genome;
@@ -39,10 +38,6 @@ public class TestPart {
 //			NatalieBacteriocin.run();
 //			Genome genome = Genome.loadGenome("Listeria monocytogenes 6179");
 //			Chromosome chromo = genome.getChromosomes().get(0);
-			
-			ExpressionMatrix matrix = ExpressionMatrix.loadTab(Database.getInstance().getDATA_PATH()+"Ama and Proma DNA.txt",true);
-			matrix = Annotation.addAnnotationMultiChromosome(matrix, Genome.loadGenome(Leishmania.Donovani_NAME));
-			matrix.saveTab(Database.getInstance().getDATA_PATH()+"Ama and Proma DNA annot.txt", "Locus");
 			
 			
 //			MainListeriomics.run();

@@ -66,7 +66,7 @@ public class CytoscapeExportDialog extends TitleAreaDialog {
 		if(listColumn.getSelection().length!=0){
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 		     fd.setText("Save the genes attributes to: ");
-		     fd.setFilterPath(Database.getInstance().getPATH());
+		     fd.setFilterPath(Database.getInstance().getPath());
 		     //fd.setFileName("");
 		     String[] filterExt = {"*.noa","*.*" };
 		     fd.setFilterExtensions(filterExt);

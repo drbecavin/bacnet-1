@@ -32,7 +32,7 @@
   <handlers xmi:id="_6wlLhMgZEeSyMNYR5xypkQ" elementId="bacnet.e4.rcp.handler.saveCommand" contributionURI="bundleclass://bacnet.e4.rcp/bacnet.e4.rcp.handlers.SaveHandler" command="_6wlLg8gZEeSyMNYR5xypkQ"/>
   <handlers xmi:id="_6wlLh8gZEeSyMNYR5xypkQ" elementId="bacnet.e4.rcp.handler.aboutCommand" contributionURI="bundleclass://bacnet.e4.rcp/bacnet.e4.rcp.handlers.AboutHandler" command="_6wlLhsgZEeSyMNYR5xypkQ"/>
   <handlers xmi:id="__D1pULrdEeWuqPNIkSVk0Q" elementId="bacnet.handler.LoadExpressionMatrixHandler" contributionURI="bundleclass://bacnet/bacnet.handler.LoadExpressionMatrixHandler" command="_OjDJULreEeWuqPNIkSVk0Q"/>
-  <handlers xmi:id="_yowCYLtxEeWbBt9qG8zApQ" elementId="bacnet.e4.rcp.handler.0" contributionURI="bundleclass://bacnet.rcp/bacnet.rcp.core.LoadExpressionMatrixAWTHandler" command="_8iLyoLriEeWuqPNIkSVk0Q"/>
+  <handlers xmi:id="_yowCYLtxEeWbBt9qG8zApQ" elementId="bacnet.e4.rcp.handler.0" contributionURI="bundleclass://bacnet.e4.rcp/bacnet.rcp.handlers.LoadExpressionMatrixAWTHandler" command="_8iLyoLriEeWuqPNIkSVk0Q"/>
   <handlers xmi:id="_258KwLtxEeWbBt9qG8zApQ" elementId="bacnet.e4.rcp.handler.1" contributionURI="bundleclass://bacnet.e4.rcp/awt.table.FusionExpressionMatrixHandler" command="_8iWxwLriEeWuqPNIkSVk0Q"/>
   <handlers xmi:id="_48U5QLtxEeWbBt9qG8zApQ" elementId="bacnet.e4.rcp.handler.2" contributionURI="bundleclass://bacnet.rcp/bacnet.rcp.vennDiagram.VennDiagramHandler" command="_8ifUoLriEeWuqPNIkSVk0Q"/>
   <bindingTables xmi:id="_6wlLfsgZEeSyMNYR5xypkQ" elementId="bacnet.e4.rcp.bindingtable" bindingContext="_6wlLecgZEeSyMNYR5xypkQ">
@@ -123,43 +123,37 @@
     </menus>
     <toolbar xmi:id="_XZ4qYroeEeWP17x1TBZCrg" elementId="bacnet.GenomeTranscriptomeView"/>
   </descriptors>
-  <descriptors xmi:id="_iW21kLrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.HeatMapViewAWT" label="HeatMap AWT" iconURI="platform:/plugin/bacnet.rcp/icons/heatmap.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.rcp/bacnet.rcp.expression.TableAWTView">
+  <descriptors xmi:id="_iW21kLrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.HeatMapViewAWT" label="HeatMap AWT" iconURI="platform:/plugin/bacnet/icons/heatmap.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.e4.rcp/awt.table.TableAWTView">
     <menus xmi:id="_iW21kbrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.HeatMapViewAWT">
       <tags>ViewMenu</tags>
     </menus>
     <toolbar xmi:id="_iW21krrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.HeatMapViewAWT"/>
   </descriptors>
-  <descriptors xmi:id="_iX2UELrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.SVDMDSView" label="SVDMDS view" iconURI="platform:/plugin/bacnet.rcp/icons/scatter.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.rcp/bacnet.rcp.stat.views.SVDMDSView">
+  <descriptors xmi:id="_iX2UELrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.SVDMDSView" label="SVDMDS view" iconURI="platform:/plugin/bacnet.rcp/icons/scatter.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.e4.rcp/awt.graphics.SVDMDSView">
     <menus xmi:id="_iX2UEbrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.SVDMDSView">
       <tags>ViewMenu</tags>
     </menus>
     <toolbar xmi:id="_iX2UErrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.SVDMDSView"/>
   </descriptors>
-  <descriptors xmi:id="_iYB6QLrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.HistogramView" label="Histogram" iconURI="platform:/plugin/bacnet.rcp/icons/histoView.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.rcp/bacnet.rcp.stat.views.HistogramView">
+  <descriptors xmi:id="_iYB6QLrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.HistogramView" label="Histogram" iconURI="platform:/plugin/bacnet.rcp/icons/histoView.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.e4.rcp/awt.graphics.HistogramView">
     <menus xmi:id="_iYB6QbrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.HistogramView">
       <tags>ViewMenu</tags>
     </menus>
     <toolbar xmi:id="_iYB6QrrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.HistogramView"/>
   </descriptors>
-  <descriptors xmi:id="_iYMSULrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.BoxPlotView" label="BoxPlot" iconURI="platform:/plugin/bacnet.rcp/icons/boxplotView.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.rcp/bacnet.rcp.stat.views.BoxPlotView">
+  <descriptors xmi:id="_iYMSULrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.BoxPlotView" label="BoxPlot" iconURI="platform:/plugin/bacnet.rcp/icons/boxplotView.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.e4.rcp/awt.graphics.BoxPlotView">
     <menus xmi:id="_iYMSUbrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.BoxPlotView">
       <tags>ViewMenu</tags>
     </menus>
     <toolbar xmi:id="_iYMSUrrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.BoxPlotView"/>
   </descriptors>
-  <descriptors xmi:id="_iYXRcLrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.VennDiagramViewAWT" label="Venn diagram viewer" iconURI="platform:/plugin/bacnet.rcp/icons/venn.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.rcp/bacnet.rcp.vennDiagram.VennDiagramViewAWT">
-    <menus xmi:id="_iYXRcbrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.VennDiagramViewAWT">
-      <tags>ViewMenu</tags>
-    </menus>
-    <toolbar xmi:id="_iYXRcrrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.VennDiagramViewAWT"/>
-  </descriptors>
-  <descriptors xmi:id="_iYi3oLrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.ScatterPlotView" label="Scatter plot" iconURI="platform:/plugin/bacnet.rcp/icons/scatter.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.rcp/bacnet.rcp.stat.views.ScatterPlotView">
+  <descriptors xmi:id="_iYi3oLrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.ScatterPlotView" label="Scatter plot" iconURI="platform:/plugin/bacnet.rcp/icons/scatter.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.e4.rcp/awt.graphics.ScatterPlotView">
     <menus xmi:id="_iYi3obrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.ScatterPlotView">
       <tags>ViewMenu</tags>
     </menus>
     <toolbar xmi:id="_iYi3orrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.ScatterPlotView"/>
   </descriptors>
-  <descriptors xmi:id="_iYtPsLrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.StatScatterView" label="StatScatterView" iconURI="platform:/plugin/bacnet.rcp/icons/volcanoplot.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.rcp/bacnet.rcp.stat.views.StatScatterView">
+  <descriptors xmi:id="_iYtPsLrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.StatScatterView" label="StatScatterView" iconURI="platform:/plugin/bacnet.rcp/icons/volcanoplot.bmp" allowMultiple="true" closeable="true" contributionURI="bundleclass://bacnet.e4.rcp/awt.graphics.StatScatterView">
     <menus xmi:id="_iYtPsbrfEeWuqPNIkSVk0Q" elementId="bacnet.rcp.StatScatterView">
       <tags>ViewMenu</tags>
     </menus>

@@ -160,7 +160,7 @@ public class COGPieChartDialog extends TitleAreaDialog implements SelectionListe
 		if(e.getSource()==btnLoadMatrices){
 			FileDialog fd = new FileDialog(shell, SWT.OPEN |SWT.MULTI);
 			fd.setText("Open expression matrices: ");
-			fd.setFilterPath(Database.getInstance().getPATH());
+			fd.setFilterPath(Database.getInstance().getPath());
 		    	String[] filterExt = {"*.*" };
 		    	fd.setFilterExtensions(filterExt);
 		    	String path = fd.open();
@@ -183,7 +183,7 @@ public class COGPieChartDialog extends TitleAreaDialog implements SelectionListe
 		}else if(e.getSource()==btnLoadLists){
 			FileDialog fd = new FileDialog(shell, SWT.OPEN |SWT.MULTI);
 			fd.setText("Open lists of gene: ");
-			fd.setFilterPath(Database.getInstance().getPATH());
+			fd.setFilterPath(Database.getInstance().getPath());
 		    	String[] filterExt = {"*.*" };
 		    	fd.setFilterExtensions(filterExt);
 		    	String path = fd.open();

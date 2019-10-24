@@ -8,8 +8,8 @@ Require-Bundle: apache.batik,
  javax.servlet,
  javax.xml,
  org.eclipse.core.runtime,
- org.eclipse.rap.filedialog,
- org.eclipse.rap.jface
+ org.eclipse.rap.filedialog;resolution:=optional,
+ org.eclipse.rap.jface;resolution:=optional
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Automatic-Module-Name: bacnet.lib
 Export-Package: ca.ualberta.stothard.cgview,

@@ -47,7 +47,7 @@ import javax.swing.SwingConstants;
 import javax.swing.table.TableCellRenderer;
 
 import bacnet.datamodel.dataset.ExpressionMatrix;
-import bacnet.datamodel.sequenceNCBI.GenomeNCBITools;
+import bacnet.datamodel.sequence.Genome;
 import bacnet.table.core.ColorMapperRCP;
 import bacnet.table.core.ColorMapperRCPList;
 
@@ -99,7 +99,7 @@ public class HeatMapDoubleRenderer extends JLabel	implements TableCellRenderer {
      	   else{
      		   if(inocua) setBackground(ColorMapperRCP.swtColorToAwt(colorMapper.getInocuaColor(expression)));
      		   else{
-     			   if(table.getColumnName(column).equals(GenomeNCBITools.EGDE_NAME)) setBackground(Color.black);
+     			   if(table.getColumnName(column).equals(Genome.EGDE_NAME)) setBackground(Color.black);
      			   else setBackground(colorMapper.parseColorAWT(expression));
      		   }
      	   }

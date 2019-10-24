@@ -318,7 +318,7 @@ public class FilterDialog extends Dialog implements SelectionListener{
 		}else if(e.getSource()==btnLoadFilter){
 			FileDialog fd = new FileDialog(shell, SWT.OPEN);
 		     fd.setText("Open the Filter in: ");
-		     fd.setFilterPath(Database.getInstance().getPATH());
+		     fd.setFilterPath(Database.getInstance().getPath());
 		     String[] filterExt = {"*.flt","*.*" };
 		     fd.setFilterExtensions(filterExt);
 		     String fileName = fd.open();
@@ -332,7 +332,7 @@ public class FilterDialog extends Dialog implements SelectionListener{
 		}else if(e.getSource()==btnSaveFilter){
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 		     fd.setText("Save the Filter to: ");
-		     fd.setFilterPath(Database.getInstance().getPATH());
+		     fd.setFilterPath(Database.getInstance().getPath());
 		     String[] filterExt = {"*.flt","*.*" };
 		     fd.setFilterExtensions(filterExt);
 		     String fileName = fd.open();

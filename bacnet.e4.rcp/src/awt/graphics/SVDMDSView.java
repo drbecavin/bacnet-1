@@ -146,7 +146,7 @@ public class SVDMDSView implements SelectionListener{
 		}else if(e.getSource()==btnPNGExport){
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 		     fd.setText("Save the image to: ");
-		     fd.setFilterPath(Database.getInstance().getPATH());
+		     fd.setFilterPath(Database.getInstance().getPath());
 		     String[] filterExt = {"*.png","*.*" };
 		     fd.setFilterExtensions(filterExt);
 		     String fileName = fd.open();
@@ -161,7 +161,7 @@ public class SVDMDSView implements SelectionListener{
 		}else if(e.getSource()==btnSVGexport){
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 		     fd.setText("Save the image to: ");
-		     fd.setFilterPath(Database.getInstance().getPATH());
+		     fd.setFilterPath(Database.getInstance().getPath());
 		     String[] filterExt = {"*.svg","*.*" };
 		     fd.setFilterExtensions(filterExt);
 		     String fileName = fd.open();

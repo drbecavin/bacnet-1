@@ -525,7 +525,7 @@ public class ColorMapperRCPWizardPage extends WizardPage implements Listener{
 		}else if(event.widget == btnLoadColorMapper){
 			FileDialog fd = new FileDialog(shell, SWT.OPEN);
 			fd.setText("Load the colormapper: ");
-			fd.setFilterPath(Database.getInstance().getPATH());
+			fd.setFilterPath(Database.getInstance().getPath());
 			String[] filterExt = {"*.col","*.*" };
 			fd.setFilterExtensions(filterExt);
 			String fileName = fd.open();
@@ -542,7 +542,7 @@ public class ColorMapperRCPWizardPage extends WizardPage implements Listener{
 		}else if(event.widget == btnSaveColorMapper){
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 			fd.setText("Save the image to: ");
-			fd.setFilterPath(Database.getInstance().getPATH());
+			fd.setFilterPath(Database.getInstance().getPath());
 			String[] filterExt = {"*.col","*.*" };
 			fd.setFilterExtensions(filterExt);
 			String fileName = fd.open();
@@ -554,7 +554,7 @@ public class ColorMapperRCPWizardPage extends WizardPage implements Listener{
 		}else if(event.widget == btnPngExport){
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 			fd.setText("Save the image to: ");
-			fd.setFilterPath(Database.getInstance().getPATH());
+			fd.setFilterPath(Database.getInstance().getPath());
 			String[] filterExt = {"*.png","*.*" };
 			fd.setFilterExtensions(filterExt);
 			String fileName = fd.open();

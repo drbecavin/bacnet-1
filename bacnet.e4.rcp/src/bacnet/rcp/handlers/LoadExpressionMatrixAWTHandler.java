@@ -1,6 +1,5 @@
-package awt.table;
-
-import java.util.ArrayList;
+ 
+package bacnet.rcp.handlers;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -13,12 +12,12 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 
+import awt.table.TableAWTView;
 import bacnet.Database;
 import bacnet.datamodel.dataset.ExpressionMatrix;
 import bacnet.utils.FileUtils;
 
-public class FusionExpressionMatrixHandler {
-
+public class LoadExpressionMatrixAWTHandler {
 	@ Inject
 	EPartService partService;
 
@@ -32,13 +31,11 @@ public class FusionExpressionMatrixHandler {
 		String path = fd.open();
 		String[] fileNames = fd.getFileNames();
 		path = FileUtils.getPath(path);
-		ArrayList<ExpressionMatrix> matrices = new ArrayList<ExpressionMatrix>();
 		for(String fileName : fileNames){
-			ExpressionMatrix matrix = ExpressionMatrix.loadTab(path+fileName,false);
-			matrices.add(matrix);	
+			ExpressionMatrix matrix = ExpressionMatrix.loadTab(path+fileName,true);
+			TableAWTView.displayMatrix(matrix, fileName,partService);
+
 		}
-		ExpressionMatrix matrix = ExpressionMatrix.merge(matrices, false);
-		matrix.saveTab(Database.getInstance().getPath()+"FusionOfMatrices.txt", "GenomeElements");
-		TableAWTView.displayMatrix(matrix, "Fusion of different matrices",partService);
 	}
+		
 }

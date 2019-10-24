@@ -248,7 +248,7 @@ public class ScatterPlotView implements SelectionListener{
 		if(e.getSource()==btnSavePNG){
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 			fd.setText("Save the image to: ");
-			fd.setFileName(Database.getInstance().getPATH()+".png");
+			fd.setFileName(Database.getInstance().getPath()+".png");
 			String[] filterExt = {"*.png","*.*" };
 			fd.setFilterExtensions(filterExt);
 			String fileName = fd.open();

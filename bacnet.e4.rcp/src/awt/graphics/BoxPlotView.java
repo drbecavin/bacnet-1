@@ -179,7 +179,7 @@ public class BoxPlotView implements SelectionListener{
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 		     fd.setText("Save the image to: ");
 		     //fd.setFilterPath(Activator.getDefault().getPreferenceStore().getString(Project.getANALYSIS_PATH()));
-		     fd.setFileName(Database.getInstance().getPATH());
+		     fd.setFileName(Database.getInstance().getPath());
 		     String[] filterExt = {"*.png","*.*" };
 		     fd.setFilterExtensions(filterExt);
 		     String fileName = fd.open();

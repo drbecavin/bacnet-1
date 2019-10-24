@@ -1,15 +1,14 @@
 package bacnet.raprcp;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+
 import org.eclipse.e4.ui.workbench.modeling.EPartService;
-import org.eclipse.rap.rwt.RWT;
-import org.eclipse.rap.rwt.client.service.JavaScriptExecutor;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
+
 import bacnet.utils.FileUtils;
 import bacnet.utils.HTMLUtils;
-import bacnet.views.InternalBrowser;
 
 /**
  * Utils methods for managinf files. <br>
@@ -41,28 +40,28 @@ public class SaveFileUtils {
          * script = new StringBuilder(); script.append( "try{" ); for( String str : scripts ) {
          * script.append( str ); } script.append( "}catch(e){console.log(\"Cannot find div\")}" );
          */
-        String script = HTMLUtils.getPluginTextFile("bacnet", "html/printscreen.js");
-        script = script.replaceFirst("_FileName", fileName);
-        script = script.replaceFirst("_DivName", divID);
-        JavaScriptExecutor executor = RWT.getClient().getService(JavaScriptExecutor.class);
-        executor.execute("console.log(\"printscreen\")");
-        executor.execute(script);
+//        String script = HTMLUtils.getPluginTextFile("bacnet", "html/printscreen.js");
+//        script = script.replaceFirst("_FileName", fileName);
+//        script = script.replaceFirst("_DivName", divID);
+//        JavaScriptExecutor executor = RWT.getClient().getService(JavaScriptExecutor.class);
+//        executor.execute("console.log(\"printscreen\")");
+//        executor.execute(script);
 
         /*
          * If eclipse.rcp
          */
-        // FileDialog fd = new FileDialog(shell, SWT.SAVE);
-        // fd.setText("Save "+fileName+" to: ");
-        // fd.setFileName(fileName);
-        // String extension = FileUtils.getExtension(fileName);
-        // String[] filterExt = {"*"+extension,"*.*" };
-        // fd.setFilterExtensions(filterExt);
-        // String fileNameSave = fd.open();
-        // try {
-        // FileUtils.copy(fileToSave.getAbsolutePath(), fileNameSave);
-        // } catch (Exception ex) {
-        // System.out.println("Cannot save the image");
-        // }
+         FileDialog fd = new FileDialog(shell, SWT.SAVE);
+         fd.setText("Save "+fileName+" to: ");
+         fd.setFileName(fileName);
+         String extension = FileUtils.getExtension(fileName);
+         String[] filterExt = {"*"+extension,"*.*" };
+         fd.setFilterExtensions(filterExt);
+         String fileNameSave = fd.open();
+         try {
+         FileUtils.copy(fileName, fileNameSave);
+         } catch (Exception ex) {
+         System.out.println("Cannot save the image");
+         }
 
     }
 
@@ -83,31 +82,31 @@ public class SaveFileUtils {
         /*
          * IF eclipse.rap
          */
-        String url = DownloadServiceHandler.getDownloadUrl(fileName, textToSave, partService);
-        textToDisplay = "<a href=\"" + url + "\">Click here to download " + fileName
-                + "</a><br><br><b>File preview</b><hr>" + textToDisplay;
-        if (viewFile) {
-            InternalBrowser.openText(textToDisplay, title, partService);
-        } else {
-            NavigationManagement.openURLInExternalBrowser(url, partService);
-        }
+//        String url = DownloadServiceHandler.getDownloadUrl(fileName, textToSave, partService);
+//        textToDisplay = "<a href=\"" + url + "\">Click here to download " + fileName
+//                + "</a><br><br><b>File preview</b><hr>" + textToDisplay;
+//        if (viewFile) {
+//            InternalBrowser.openText(textToDisplay, title, partService);
+//        } else {
+//            NavigationManagement.openURLInExternalBrowser(url, partService);
+//        }
 
         /*
          * If eclipse.rcp
          */
-        // FileDialog fd = new FileDialog(shell, SWT.SAVE);
-        // fd.setText("Save "+fileName+" to: ");
-        // fd.setFileName(fileName);
-        // String extension = FileUtils.getExtension(fileName);
-        // String[] filterExt = {"*"+extension,"*.*" };
-        // fd.setFilterExtensions(filterExt);
-        // String fileNameSave = fd.open();
-        // try {
-        // String text = "";
-        // FileUtils.saveText(text, fileNameSave);
-        // } catch (Exception ex) {
-        // System.out.println("Cannot save the image");
-        // }
+         FileDialog fd = new FileDialog(shell, SWT.SAVE);
+         fd.setText("Save "+fileName+" to: ");
+         fd.setFileName(fileName);
+         String extension = FileUtils.getExtension(fileName);
+         String[] filterExt = {"*"+extension,"*.*" };
+         fd.setFilterExtensions(filterExt);
+         String fileNameSave = fd.open();
+         try {
+         String text = "";
+         FileUtils.saveText(text, fileNameSave);
+         } catch (Exception ex) {
+         System.out.println("Cannot save the image");
+         }
 
     }
 
@@ -124,26 +123,26 @@ public class SaveFileUtils {
         /*
          * IF eclipse.rap
          */
-        String url = DownloadServiceHandler.getDownloadUrl(fileName, fileToSave, partService);
-        String textToDisplay = "<a href=\"" + url + "\">Click here to download " + fileName
-                + "</a><br><br><b>No file preview available</b><hr>";
-        InternalBrowser.openText(textToDisplay, title, partService);
+//        String url = DownloadServiceHandler.getDownloadUrl(fileName, fileToSave, partService);
+//        String textToDisplay = "<a href=\"" + url + "\">Click here to download " + fileName
+//                + "</a><br><br><b>No file preview available</b><hr>";
+//        InternalBrowser.openText(textToDisplay, title, partService);
 
         /*
          * If eclipse.rcp
          */
-        // FileDialog fd = new FileDialog(shell, SWT.SAVE);
-        // fd.setText("Save "+fileName+" to: ");
-        // fd.setFileName(fileName);
-        // String extension = FileUtils.getExtension(fileName);
-        // String[] filterExt = {"*"+extension,"*.*" };
-        // fd.setFilterExtensions(filterExt);
-        // String fileNameSave = fd.open();
-        // try {
-        // FileUtils.copy(fileToSave.getAbsolutePath(), fileNameSave);
-        // } catch (Exception ex) {
-        // System.out.println("Cannot save the image");
-        // }
+         FileDialog fd = new FileDialog(shell, SWT.SAVE);
+         fd.setText("Save "+fileName+" to: ");
+         fd.setFileName(fileName);
+         String extension = FileUtils.getExtension(fileName);
+         String[] filterExt = {"*"+extension,"*.*" };
+         fd.setFilterExtensions(filterExt);
+         String fileNameSave = fd.open();
+         try {
+         FileUtils.copy(fileToSave.getAbsolutePath(), fileNameSave);
+         } catch (Exception ex) {
+         System.out.println("Cannot save the image");
+         }
 
     }
 
@@ -177,22 +176,22 @@ public class SaveFileUtils {
         /*
          * For eclipse.rap
          */
-        if (!RWT.getApplicationContext().getResourceManager().isRegistered(dataName)) {
-            try {
-                RWT.getApplicationContext().getResourceManager().register(dataName, new FileInputStream(tempDataFile));
-            } catch (FileNotFoundException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-        System.out.println(RWT.getApplicationContext().getResourceManager().getLocation(dataName));
-        String fileNameResource = "../" + dataName;
-        return fileNameResource;
+//        if (!RWT.getApplicationContext().getResourceManager().isRegistered(dataName)) {
+//            try {
+//                RWT.getApplicationContext().getResourceManager().register(dataName, new FileInputStream(tempDataFile));
+//            } catch (FileNotFoundException e) {
+//                // TODO Auto-generated catch block
+//                e.printStackTrace();
+//            }
+//        }
+//        System.out.println(RWT.getApplicationContext().getResourceManager().getLocation(dataName));
+//        String fileNameResource = "../" + dataName;
+//        return fileNameResource;
 
         /*
          * Fro eclipse.rcp
          */
-        // return tempDataFile;
+        return "";
     }
 
 }

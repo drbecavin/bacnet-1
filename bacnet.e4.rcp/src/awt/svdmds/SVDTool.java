@@ -92,7 +92,7 @@ public class SVDTool {
 				count++;
 			}
 		}
-		ArrayUtils.displayMatrix("tempInertie :",tempInertie);
+		VectorUtils.displayVector("tempInertie :",tempInertie);
 		
 		int nbOfDim=tempS.getRowDimension()-count;
 		// X = USVt

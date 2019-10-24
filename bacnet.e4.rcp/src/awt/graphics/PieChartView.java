@@ -139,7 +139,7 @@ public class PieChartView implements SelectionListener{
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 		     fd.setText("Save the image to: ");
 		     //fd.setFilterPath(Activator.getDefault().getPreferenceStore().getString(Project.getANALYSIS_PATH()));
-		     fd.setFileName(Database.getInstance().getPATH()+".png");
+		     fd.setFileName(Database.getInstance().getPath()+".png");
 		     String[] filterExt = {"*.png","*.*" };
 		     fd.setFilterExtensions(filterExt);
 		     String fileName = fd.open();
@@ -155,7 +155,7 @@ public class PieChartView implements SelectionListener{
 			FileDialog fd = new FileDialog(shell, SWT.SAVE);
 		     fd.setText("Save the SVG image to: ");
 		     //fd.setFilterPath(Activator.getDefault().getPreferenceStore().getString(Project.getANALYSIS_PATH()));
-		     fd.setFileName(Database.getInstance().getPATH()+".svg");
+		     fd.setFileName(Database.getInstance().getPath()+".svg");
 		     String[] filterExt = {"*.svg","*.*" };
 		     fd.setFilterExtensions(filterExt);
 		     String fileName = fd.open();
