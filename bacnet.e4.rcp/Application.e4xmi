@@ -6,6 +6,7 @@
         <children xsi:type="basic:PartSashContainer" xmi:id="_6wlLksgZEeSyMNYR5xypkQ" elementId="bacnet.e4.rcp.partsashcontainer.sample">
           <children xsi:type="basic:PartStack" xmi:id="_6wlLk8gZEeSyMNYR5xypkQ" elementId="bacnet.e4.rcp.partstack.sample">
             <children xsi:type="basic:Part" xmi:id="_Tazw4MOOEeWvvM59Kp44tQ" elementId="bacnet.e4.rcp.Test" visible="false" contributionURI="bundleclass://bacnet.e4.rcp/bacnet.e4.rcp.parts.TestPart" label="Test Part"/>
+            <children xsi:type="basic:Part" xmi:id="_McRBsBp2EeqBWI6CHmdGMQ" elementId="bacnet.e4.rcp.part.home" contributionURI="bundleclass://bacnet/bacnet.views.InitView" label="Home" tooltip="InitView"/>
           </children>
         </children>
       </children>
